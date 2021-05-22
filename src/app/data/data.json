@@ -1,0 +1,39 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "firstName": "Micheal",
+      "lastName": "Hussey",
+      "phoneNumber": "6112345671",
+      "emailId": "mike.hussey@test.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Steve",
+      "lastName": "Smith",
+      "phoneNumber": "6147704443",
+      "emailId": "steve.smith@test.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Micheal",
+      "lastName": "Beaven",
+      "phoneNumber": "6133435454",
+      "emailId": "micheal.beaven@test.com"
+    },
+    {
+      "id": 4,
+      "firstName": "Ricky",
+      "lastName": "Pointing",
+      "phoneNumber": "6134343435",
+      "emailId": "ponting@test.com"
+    },
+    {
+      "firstName": "Andrew",
+      "lastName": "Symonds",
+      "phoneNumber": "8785773330",
+      "emailId": "symonds@test.com",
+      "id": 5
+    }
+  ]
+}

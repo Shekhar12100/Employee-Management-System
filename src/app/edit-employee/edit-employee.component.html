@@ -1,0 +1,38 @@
+<div>
+  <h2>Edit Employee <button class="btn btn-primary float-right" routerLink="/employee-list">Back</button></h2>
+  <form [formGroup]="empEditForm" (ngSubmit)="submitEditForm()" novalidate>
+      <div class="form-group">
+          <label>First Name</label>
+          <input type="text" formControlName="firstName" name="firstName" id="firstName" class="form-control" maxlength="20" [ngClass]="{'is-invalid': empEditForm.get('firstName').errors && empEditForm.get('firstName').touched && empEditForm.get('firstName').invalid}"/>
+          <div *ngIf="empEditForm.get('firstName').touched && empEditForm.get('firstName').invalid" class="error">
+            <div *ngIf="empEditForm.get('firstName').errors.required">First Name is required.</div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName" name="lastName" id="lastName" class="form-control" maxlength="20" [ngClass]="{'is-invalid': empEditForm.get('lastName').errors && empEditForm.get('lastName').touched && empEditForm.get('lastName').invalid}"/>
+        <div *ngIf="empEditForm.get('lastName').touched && empEditForm.get('lastName').invalid" class="error">
+          <div *ngIf="empEditForm.get('lastName').errors.required">Last Name is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="emailId" name="emailId" id="emailId" class="form-control"  [ngClass]="{'is-invalid': empEditForm.get('emailId').errors && empEditForm.get('emailId').touched && empEditForm.get('emailId').invalid}"/>
+        <div *ngIf="empEditForm.get('emailId').touched && empEditForm.get('emailId').invalid" class="error">
+          <div *ngIf="empEditForm.get('emailId').errors.required">Email ID is required.</div>
+          <div *ngIf="empEditForm.get('emailId').errors.pattern">Please Enter correct email address.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" formControlName="phoneNumber" name="phoneNumber" id="phoneNumber" minlength="10" maxlength="10" class="form-control" [ngClass]="{'is-invalid': empEditForm.get('phoneNumber').errors && empEditForm.get('phoneNumber').touched && empEditForm.get('phoneNumber').invalid}"/>
+          <div *ngIf="empEditForm.get('phoneNumber').touched && empEditForm.get('phoneNumber').invalid" class="error">
+            <div *ngIf="empEditForm.get('phoneNumber').errors.required">Mobile Number is required.</div>
+            <div *ngIf="empEditForm.get('phoneNumber').errors.pattern">Please Enter 10 digit Mobile Number.</div>
+          </div>
+      </div>
+
+      <button class="btn btn-primary" [disabled]="!empEditForm.valid" type="submit">Submit</button>
+  </form>
+</div>

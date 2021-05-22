@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-heading mb-4">
+    <h2>Employee List <button class="btn btn-primary float-right" routerLink="/add-employee">Add New Employee</button></h2>
+
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.emailId}}</td>
+          <td>{{employee.phoneNumber}}</td>
+          <td>
+              <button type="button" [routerLink]="['/edit-employee/', employee.id]" class="btn btn-info" style="margin-right: 10px">Edit</button>
+              <button (click)="deleteEmployee(employee)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
